@@ -1,0 +1,128 @@
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	padding: 20px;
+	background-color: #fff;
+}
+
+.container {
+	border: 1px solid #ddd;
+	float: left;
+	width: 40%;
+	background-color: #fff;
+	margin: 20px 5%;
+	padding: 20px;
+	color: #111;
+	font-size: 18px;
+}
+
+.radio, .checkbox {
+	margin: 20px 0;
+	height: 30px;
+	line-height: 30px;
+}
+
+/*method1*/
+#method1 input {
+	display: none;
+}
+
+#method1 input + label {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	margin: 0 6px;
+	width: 18px;
+	height: 18px;
+	background: url(../img/99322cf8c3283e42.png) -23px -8px no-repeat;
+}
+
+#method1 input:checked + label {
+	background-position: -58px -8px;
+}
+
+#method1 .checkbox input + label {
+	background-position: -22px -29px;
+}
+
+#method1 .checkbox input:checked + label {
+	background-position: -57px -28px;
+}
+
+#method2 input {
+	display: none;
+}
+
+#method2 input + label {
+	position: relative;
+	top: 3px;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	padding-left: 40px;
+}
+
+#method2 input + label:before {
+	display: inline-block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #ddd;
+	border-radius: 50%;
+}
+
+#method2 input + label:after {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #f00;
+	position: absolute;
+	content: '';
+	top: 5px;
+	left: 5px;
+	display: none;
+}
+
+#method2 input:checked + label:before {
+	border-color: #f00;
+}
+
+#method2 input:checked + label:after {
+	display: block;
+}
+
+#method2 .checkbox input + label:before {
+	border-radius: 3px;
+}
+
+#method2 .checkbox input + label:after {
+	border-radius: 0;
+	left: 7px;
+	top: 3px;
+	width: 6px;
+	height: 10px;
+	transform: rotate(45deg);
+	border: 2px solid #f00;
+	border-top: 0;
+	border-left: 0;
+	background-color: #fff;
+}
