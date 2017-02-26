@@ -1,5 +1,5 @@
 (function(){
-	alert("load js");
+	// alert("load js");
 	var showArea = document.getElementById("area"),
 		iMenu = document.getElementById("imenu"),
 		areaX = showArea.offsetLeft,
@@ -8,6 +8,7 @@
 	showArea.onmousedown = function(event){
 		var e = event || window.event;
 		if(e.button == "2") {
+			e.cancelBubble = true;
 			e.stopPropagation();
 			e.preventDefault();
 			var	realX = e.clientX - areaX,
@@ -51,4 +52,12 @@
 		eIn.style.left = iPosX + 'px';
 		eIn.style.visibility = "visible";
 	}
+
+	function nocontextmenu() {
+	 event.cancelBubble = true
+	 event.returnvalue = false;
+	 return false;
+	}
+
+	document.oncontextmenu = nocontextmenu;
 })();
