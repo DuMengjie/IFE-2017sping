@@ -17,7 +17,7 @@ body {
 	padding: 20px;
 }
 
-.area {
+#area {
 	width: 1000px;
 	height: 300px;
 	border: 2px solid #E4E4E4;
@@ -27,7 +27,7 @@ body {
 	background-color: #F5F5F5;
 }
 
-.area p {
+#area p {
 	font-size: 20px;
 }
 

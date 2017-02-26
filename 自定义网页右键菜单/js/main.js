@@ -1,7 +1,7 @@
 (function(){
 	alert("load js");
-	var showArea = document.querySelector(".area"),
-		iMenu = document.querySelector("#imenu"),
+	var showArea = document.getElementById("area"),
+		iMenu = document.getElementById("imenu"),
 		areaX = showArea.offsetLeft,
 		areaY = showArea.offsetTop;
 
