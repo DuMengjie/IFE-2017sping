@@ -1,5 +1,9 @@
 (function(){
 
+	document.oncontextmenu = function (e) {
+        return false;
+	};
+
 	var showArea = document.querySelector(".area"),
 		iMenu = document.querySelector("#imenu"),
 		areaX = showArea.offsetLeft,
@@ -7,6 +11,8 @@
 
 	showArea.onmousedown = function(event){
 		var e = event || window.event;
+		e.preventDefault();
+
 		if(e.button == "2") {
 			var	realX = e.clientX - areaX,
 				realY = e.clientY - areaY;
