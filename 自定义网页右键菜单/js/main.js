@@ -5,6 +5,10 @@
 		areaX = showArea.offsetLeft,
 		areaY = showArea.offsetTop;
 
+	alert(showArea);
+	alert(iMenu);
+	alert(showArea.oncontextmenu);
+
 	showArea.oncontextmenu = function(e) {
 		alert("right button click");
 		e.preventDefault();
