@@ -1,25 +1,29 @@
 (function(){
 
-	document.oncontextmenu = function (e) {
-        return false;
-	};
-
 	var showArea = document.querySelector(".area"),
 		iMenu = document.querySelector("#imenu"),
 		areaX = showArea.offsetLeft,
 		areaY = showArea.offsetTop;
 
-	showArea.onmousedown = function(event){
-		var e = event || window.event;
+	showArea.oncontextmenu = function(e) {
 		e.preventDefault();
+		var	realX = e.clientX - areaX,
+			realY = e.clientY - areaY;
 
-		if(e.button == "2") {
-			var	realX = e.clientX - areaX,
-				realY = e.clientY - areaY;
+		setPos(showArea, iMenu, realX, realY);
+	}
 
-			setPos(showArea, iMenu, realX, realY);
-		}
-	};
+	// showArea.onmousedown = function(event){
+	// 	var e = event || window.event;
+	// 	e.preventDefault();
+
+	// 	if(e.button == "2") {
+	// 		var	realX = e.clientX - areaX,
+	// 			realY = e.clientY - areaY;
+
+	// 		setPos(showArea, iMenu, realX, realY);
+	// 	}
+	// };
 
 	iMenu.onmousedown = function(event){
 		var e = event || window.event;
