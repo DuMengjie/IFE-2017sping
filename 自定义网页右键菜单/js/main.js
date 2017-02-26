@@ -8,6 +8,7 @@
 	showArea.onmousedown = function(event){
 		var e = event || window.event;
 		if(e.button == "2") {
+			e.stopPropagation();
 			e.preventDefault();
 			var	realX = e.clientX - areaX,
 				realY = e.clientY - areaY;
