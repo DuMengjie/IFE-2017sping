@@ -5,17 +5,15 @@
 		areaX = showArea.offsetLeft,
 		areaY = showArea.offsetTop;
 
-	alert(showArea);
-	alert(iMenu);
-	alert(showArea.oncontextmenu);
+	showArea.onmousedown = function(event){
+		var e = event || window.event;
+		if(e.button == "2") {
+			e.preventDefault();
+			var	realX = e.clientX - areaX,
+				realY = e.clientY - areaY;
 
-	showArea.oncontextmenu = function(e) {
-		alert("right button click");
-		e.preventDefault();
-		var	realX = e.clientX - areaX,
-			realY = e.clientY - areaY;
-
-		setPos(showArea, iMenu, realX, realY);
+			setPos(showArea, iMenu, realX, realY);
+		}
 	}
 
 	iMenu.onmousedown = function(event){
