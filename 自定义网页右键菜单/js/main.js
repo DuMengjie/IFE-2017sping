@@ -16,9 +16,6 @@
 	showArea.onmouseup = function(e){
 		var e = e || window.event;
 		if(e.button == "2") {
-			e.cancelBubble = true;
-			e.stopPropagation();
-
 			var	realX = e.clientX - areaX,
 				realY = e.clientY - areaY;
 
