@@ -1,0 +1,54 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+html,body,div,p,a,label {
+	padding: 0;
+	margin: 0;
+}
+
+.accordionMenu {
+	background: #fff;
+	color: #424242;
+	margin: 0 auto;
+	padding: 10px;
+	width: 600px;
+}
+
+.menuSection {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 6px;
+}
+
+.menuSection label {
+	display: block;
+	font-size: 18px;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #F5F5F5;
+	padding-left: 16px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.menuSection label + input {
+	display: none;
+}
+
+.menuSection p {
+	padding: 10px 16px;
+	display: none;
+	transition: all 0.3s ease;
+}
+
+.menuSection input:checked + p {
+	display: block;
+}
