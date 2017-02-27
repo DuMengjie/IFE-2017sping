@@ -1,16 +1,24 @@
 (function(){
-	// alert("load js");
+
+	document.oncontextmenu = block;
+	function block(event) {
+      if (window.event) {
+        event = window.event;
+        event.returnValue = false;
+      } else event.preventDefault();
+    }
+
 	var showArea = document.getElementById("area"),
 		iMenu = document.getElementById("imenu"),
 		areaX = showArea.offsetLeft,
 		areaY = showArea.offsetTop;
 
-	showArea.onmousedown = function(event){
-		var e = event || window.event;
+	showArea.onmouseup = function(e){
+		var e = e || window.event;
 		if(e.button == "2") {
 			e.cancelBubble = true;
 			e.stopPropagation();
-			e.preventDefault();
+
 			var	realX = e.clientX - areaX,
 				realY = e.clientY - areaY;
 
@@ -18,15 +26,15 @@
 		}
 	}
 
-	iMenu.onmousedown = function(event){
-		var e = event || window.event;
+	iMenu.onmouseup = function(e){
+		var e = e || window.event;
 		if(e.button == "2") {
 			//阻止事件冒泡
 			window.event? window.event.cancelBubble = true : e.stopPropagation();
 		} else {
 			// console.log(e.target);
-			alert(e.target.innerHTML);
 			iMenu.style.visibility = "hidden";
+			alert(e.target.innerHTML);
 		}
 	}
 
@@ -52,12 +60,4 @@
 		eIn.style.left = iPosX + 'px';
 		eIn.style.visibility = "visible";
 	}
-
-	function nocontextmenu() {
-	 event.cancelBubble = true
-	 event.returnvalue = false;
-	 return false;
-	}
-
-	document.oncontextmenu = nocontextmenu;
 })();
