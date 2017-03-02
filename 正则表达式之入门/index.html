@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则表达式之入门</title>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<div class="container">
+		<div class="item">
+			<table class="bordered">
+				<caption>手机号码检验</caption>
+				<tr>
+					<th>检验规则</th>
+					<td colspan="2">11位数字，以1开头(假设13,14,15,18开头都算合格)</td>
+				</tr>
+				<tr>
+					<th>表达式</th>
+					<td colspan="2">/^[3458][0-9]\d{8}$/</td>
+				</tr>
+				<tr>
+					<th rowspan="3">样例</th>
+					<td>18812011232</td>
+					<td>true</td>
+				</tr>
+				<tr>
+					<td>18812312</td>
+					<td>false</td>
+				</tr>
+				<tr>
+					<td>12345678909</td>
+					<td>false</td>
+				</tr>
+				<tr>
+					<th>测试</th>
+					<td colspan="2">
+						<input type="text" placeholder="输入手机号进行检测" name="tel-number" autofocus>
+						<input type="submit" name="tel-test">
+					</td>
+				</tr>
+				<tr>
+					<th>测试结果</th>
+					<td colspan="2">
+						<span id="tel-result">...</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="item">
+			<table class="bordered">
+				<caption>相邻相同单词检验</caption>
+				<tr>
+					<th>检验规则</th>
+					<td colspan="2">字符串中是否有相邻的重复单词</td>
+				</tr>
+				<tr>
+					<th>表达式</th>
+					<td colspan="2">/\b([A-Za-z]+)\s+\1\b/</td>
+				</tr>
+				<tr>
+					<th rowspan="3">样例</th>
+					<td>foo foo bar</td>
+					<td>true</td>
+				</tr>
+				<tr>
+					<td>foo bar foo</td>
+					<td>false</td>
+				</tr>
+				<tr>
+					<td>foo  barbar bar</td>
+					<td>false</td>
+				</tr>
+				<tr>
+					<th>测试</th>
+					<td colspan="2">
+						<input type="text" placeholder="输入字符串进行检测" name="word-string" autofocus>
+						<input type="submit" name="word-test">
+					</td>
+				</tr>
+				<tr>
+					<th>测试结果</th>
+					<td colspan="2">
+						<span id="word-result">...</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
